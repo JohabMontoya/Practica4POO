@@ -1,4 +1,4 @@
-module com.example.demo4 {
+module com.example.Practica4Jaqueline {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -11,6 +11,6 @@ module com.example.demo4 {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
-    opens com.example.demo4 to javafx.fxml;
-    exports com.example.demo4;
+    opens com.example.Practica4Jaqueline to javafx.fxml;
+    exports com.example.Practica4Jaqueline;
 }
