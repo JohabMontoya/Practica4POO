@@ -12,13 +12,19 @@ public class TableroShobu {
         return x >= 0 && x < 4 && y >= 0 && y < 4;
     }
 
-    public PiedraShobu get(int x, int y) {
+    public PiedraShobu getPiedraEn(int x, int y) {
         if (!dentro(x, y)) return null;
         return piedras[x][y];
     }
 
+    public boolean esPiedraDel(int x, int y, int jugadorId) {
+        PiedraShobu p = getPiedraEn(x, y);
+        if (p == null) return false;
+        return p.getJugadorId() == jugadorId;
+    }
+
     public boolean estaVacio(int x, int y) {
-        return get(x, y) == null;
+        return getPiedraEn(x, y) == null;
     }
 
     public boolean colocar(PiedraShobu p, int x, int y) {

@@ -17,9 +17,6 @@ public class JuegoShobu {
     }
 
 
-    /**
-     *
-     */
     private void inicializar() {
         for (int t = 0; t < 4; t++) {
             tableros[t].limpiar();
@@ -30,6 +27,12 @@ public class JuegoShobu {
             }
         }
     }
+
+    public void cambiarJugador() {
+        jugadorActual = (jugadorActual == 0) ? 1 : 0;
+    }
+
+
 
     public TableroShobu getTablero(int id) { return tableros[id]; }
     public int getJugadorActual() { return jugadorActual; }
