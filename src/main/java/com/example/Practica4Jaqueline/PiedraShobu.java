@@ -5,12 +5,6 @@ public class PiedraShobu {
     private int posY;
     private int jugadorId; // 0 o 1
 
-    public PiedraShobu(int posX, int posY, int jugadorId) {
-        this.posX = posX;
-        this.posY = posY;
-        this.jugadorId = jugadorId;
-    }
-
     public PiedraShobu(int jugadorId) {
         this.jugadorId = jugadorId;
     }

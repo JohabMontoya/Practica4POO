@@ -2,10 +2,10 @@ package com.example.Practica4Jaqueline;
 
 public class TableroShobu {
 
-    private PiedraShobu[][] piedra;
+    private PiedraShobu[][] piedras;
 
     public TableroShobu() {
-        this.piedra = new PiedraShobu[4][4];
+        this.piedras = new PiedraShobu[4][4];
     }
 
     public boolean dentro(int x, int y) {
@@ -14,7 +14,7 @@ public class TableroShobu {
 
     public PiedraShobu get(int x, int y) {
         if (!dentro(x, y)) return null;
-        return piedra[x][y];
+        return piedras[x][y];
     }
 
     public boolean estaVacio(int x, int y) {
@@ -33,7 +33,7 @@ public class TableroShobu {
         if (!estaVacio(x, y)) return false;
 
 
-        piedra[x][y] = p;
+        piedras[x][y] = p;
         p.setPosX(x);
         p.setPosY(y);
         return true;
@@ -41,8 +41,16 @@ public class TableroShobu {
 
     public boolean quitar(int x, int y) {
         if (!dentro(x, y)) return false;
-        piedra[x][y] = null;
+        piedras[x][y] = null;
         return true;
+    }
+
+    public void limpiar() {
+        for (int x = 0; x < 4; x++) {
+            for (int y = 0; y < 4; y++) {
+                piedras[x][y] = null;
+            }
+        }
     }
 
     /**
@@ -56,13 +64,13 @@ public class TableroShobu {
         if (!dentro(fx, fy) || !dentro(tx, ty)) return false;
 
 
-        PiedraShobu p = piedra[fx][fy];
+        PiedraShobu p = piedras[fx][fy];
         if (p == null) return false;
-        if (piedra[tx][ty] != null) return false;
+        if (piedras[tx][ty] != null) return false;
 
 
-        piedra[fx][fy] = null;
-        piedra[tx][ty] = p;
+        piedras[fx][fy] = null;
+        piedras[tx][ty] = p;
         p.setPosX(tx);
         p.setPosY(ty);
         return true;

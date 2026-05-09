@@ -1,7 +1,7 @@
 package com.example.Practica4Jaqueline;
 
 public class JugadorShobu {
-    private int id; // 0 o 1
+    private final int id; // 0 o 1
 
     public JugadorShobu(int id) {
         this.id = id;

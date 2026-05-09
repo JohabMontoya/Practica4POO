@@ -13,6 +13,22 @@ public class JuegoShobu {
         for (int i = 0; i < 4; i++) {
             tableros[i] = new TableroShobu();
         }
+        inicializar();
+    }
+
+
+    /**
+     *
+     */
+    private void inicializar() {
+        for (int t = 0; t < 4; t++) {
+            tableros[t].limpiar();
+
+            for (int x = 0; x < 4; x++) {
+                tableros[t].colocar(new PiedraShobu(0), x, 0);
+                tableros[t].colocar(new PiedraShobu(1), x, 3);
+            }
+        }
     }
 
     public TableroShobu getTablero(int id) { return tableros[id]; }
