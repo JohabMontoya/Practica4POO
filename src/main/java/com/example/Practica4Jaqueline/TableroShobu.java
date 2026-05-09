@@ -52,6 +52,23 @@ public class TableroShobu {
         }
     }
 
+    public int[] calcularDireccion(int x1, int y1, int x2, int y2) {
+        int dx = x2 - x1;
+        int dy = y2 - y1;
+        return new int[]{dx, dy};
+    }
+
+    public boolean esMovimientoValido(int fx, int fy, int tx, int ty) {
+        if (!dentro(fx, fy) || !dentro(tx, ty)) return false;
+        if (getPiedraEn(fx, fy) == null) return false;
+        if (!estaVacio(tx, ty)) return false;
+
+        int[] dir = calcularDireccion(fx, fy, tx, ty);
+        int distancia = Math.max(Math.abs(dir[0]), Math.abs(dir[1]));
+
+        return distancia > 0 && distancia <= 2;
+    }
+
     public boolean moverBasico(int fx, int fy, int tx, int ty) {
         if (!dentro(fx, fy) || !dentro(tx, ty)) return false;
 
