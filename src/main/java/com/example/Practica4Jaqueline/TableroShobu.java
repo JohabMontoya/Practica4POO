@@ -39,6 +39,35 @@ public class TableroShobu {
         return true;
     }
 
+    public boolean quitar(int x, int y) {
+        if (!dentro(x, y)) return false;
+        piedra[x][y] = null;
+        return true;
+    }
+
+    /**
+     * Recibe de parámetro dos coordenadas, una inicial y otra final
+     * verifica si la segunda está ocupada por una piedra, si una piedra
+     * está ocupándola, no hace nada, en caso de que sí, cambia los valores
+     * de la posición inicial a null para decir que no tiene nada y los de
+     * la segunda coordenada para asignar la piedra.
+     */
+    public boolean moverBasico(int fx, int fy, int tx, int ty) {
+        if (!dentro(fx, fy) || !dentro(tx, ty)) return false;
+
+
+        PiedraShobu p = piedra[fx][fy];
+        if (p == null) return false;
+        if (piedra[tx][ty] != null) return false;
+
+
+        piedra[fx][fy] = null;
+        piedra[tx][ty] = p;
+        p.setPosX(tx);
+        p.setPosY(ty);
+        return true;
+    }
+
     public int getAncho() { return 4; }
     public int getAlto()  { return 4; }
 }

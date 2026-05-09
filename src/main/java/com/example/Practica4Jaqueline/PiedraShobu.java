@@ -11,6 +11,10 @@ public class PiedraShobu {
         this.jugadorId = jugadorId;
     }
 
+    public PiedraShobu(int jugadorId) {
+        this.jugadorId = jugadorId;
+    }
+
     public int getPosX() { return posX; }
     public int getPosY() { return posY; }
     public int getJugadorId() { return jugadorId; }
