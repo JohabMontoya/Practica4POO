@@ -1,13 +1,13 @@
 package com.example.Practica4Jaqueline;
 
-import java.util.List;
-
 public class JugadorShobu {
-    private List<PiedraShobu> fichas;
-    private boolean esPasivo;
-    private int turno;
+    private int id; // 0 o 1
 
-    public void mover(){
+    public JugadorShobu(int id) {
+        this.id = id;
+    }
 
-    };
+    public int getId() {
+        return id;
+    }
 }
