@@ -1,4 +1,4 @@
-package com.example.Practica4Jaqueline;
+package com.example.Practica4Jaqueline.Visual;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

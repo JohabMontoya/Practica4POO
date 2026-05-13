@@ -13,4 +13,6 @@ module com.example.Practica4Jaqueline {
 
     opens com.example.Practica4Jaqueline to javafx.fxml;
     exports com.example.Practica4Jaqueline;
+    exports com.example.Practica4Jaqueline.Visual;
+    opens com.example.Practica4Jaqueline.Visual to javafx.fxml;
 }
